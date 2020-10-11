@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/clientv3/concurrency"
+	"github.com/mosheya/etcd/clientv3"
+	"github.com/mosheya/etcd/clientv3/concurrency"
 )
 
 func ExampleMutex_Lock() {

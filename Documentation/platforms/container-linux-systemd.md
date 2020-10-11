@@ -6,7 +6,7 @@ The following guide shows how to run etcd with [systemd][systemd-docs] under [Co
 
 ## Provisioning an etcd cluster
 
-Cluster bootstrapping in Container Linux is simplest with [Ignition][container-linux-ignition]; `coreos-metadata.service` dynamically fetches the machine's IP for discovery. Note that etcd's discovery service protocol is only meant for bootstrapping, and cannot be used with runtime reconfiguration or cluster monitoring.
+Cluster bootstrapping in Container Linux is simplest with [Ignition][container-linux-ignition]; `mosheya-metadata.service` dynamically fetches the machine's IP for discovery. Note that etcd's discovery service protocol is only meant for bootstrapping, and cannot be used with runtime reconfiguration or cluster monitoring.
 
 The [Container Linux Config Transpiler][container-linux-ct] compiles etcd configuration files into Ignition configuration files:
 
@@ -39,7 +39,7 @@ $ ct --platform=gce --in-file /tmp/ct-etcd.cnf
       "enable":true,
       "dropins":[{
         "name":"20-clct-etcd-member.conf",
-        "contents":"[Unit]\nRequires=coreos-metadata.service\nAfter=coreos-metadata.service\n\n[Service]\nEnvironmentFile=/run/metadata/coreos\nEnvironment=\"ETCD_IMAGE_TAG=v3.1.8\"\nExecStart=\nExecStart=/usr/lib/coreos/etcd-wrapper $ETCD_OPTS \\\n  --name=\"s1\" \\\n  --data-dir=\"/var/lib/etcd\" \\\n  --listen-peer-urls=\"http://${COREOS_GCE_IP_LOCAL_0}:2380\" \\\n  --listen-client-urls=\"http://0.0.0.0:2379\" \\\n  --initial-advertise-peer-urls=\"http://${COREOS_GCE_IP_LOCAL_0}:2380\" \\\n  --advertise-client-urls=\"http://${COREOS_GCE_IP_EXTERNAL_0}:2379\" \\\n  --discovery=\"https://discovery.etcd.io/\u003ctoken\u003e\""}]}]},
+        "contents":"[Unit]\nRequires=mosheya-metadata.service\nAfter=mosheya-metadata.service\n\n[Service]\nEnvironmentFile=/run/metadata/mosheya\nEnvironment=\"ETCD_IMAGE_TAG=v3.1.8\"\nExecStart=\nExecStart=/usr/lib/mosheya/etcd-wrapper $ETCD_OPTS \\\n  --name=\"s1\" \\\n  --data-dir=\"/var/lib/etcd\" \\\n  --listen-peer-urls=\"http://${mosheya_GCE_IP_LOCAL_0}:2380\" \\\n  --listen-client-urls=\"http://0.0.0.0:2379\" \\\n  --initial-advertise-peer-urls=\"http://${mosheya_GCE_IP_LOCAL_0}:2380\" \\\n  --advertise-client-urls=\"http://${mosheya_GCE_IP_EXTERNAL_0}:2379\" \\\n  --discovery=\"https://discovery.etcd.io/\u003ctoken\u003e\""}]}]},
       "networkd":{},
       "passwd":{}}
 ```
@@ -198,8 +198,8 @@ systemctl disable --now etcd2.service
 ```
 
 [systemd-docs]: https://github.com/systemd/systemd
-[container-linux-docs]: https://coreos.com/os/docs/latest
-[container-linux-faq]: https://github.com/coreos/docs/blob/master/etcd/os-faq.md
-[container-linux-provision]: https://github.com/coreos/docs/blob/master/os/provisioning.md
-[container-linux-ignition]: https://github.com/coreos/docs/blob/master/ignition/what-is-ignition.md
-[container-linux-ct]: https://github.com/coreos/container-linux-config-transpiler
+[container-linux-docs]: https://mosheya.com/os/docs/latest
+[container-linux-faq]: https://github.com/mosheya/docs/blob/master/etcd/os-faq.md
+[container-linux-provision]: https://github.com/mosheya/docs/blob/master/os/provisioning.md
+[container-linux-ignition]: https://github.com/mosheya/docs/blob/master/ignition/what-is-ignition.md
+[container-linux-ct]: https://github.com/mosheya/container-linux-config-transpiler

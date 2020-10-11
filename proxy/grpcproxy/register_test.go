@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/clientv3/naming"
-	"github.com/coreos/etcd/integration"
-	"github.com/coreos/etcd/pkg/testutil"
+	"github.com/mosheya/etcd/clientv3"
+	"github.com/mosheya/etcd/clientv3/naming"
+	"github.com/mosheya/etcd/integration"
+	"github.com/mosheya/etcd/pkg/testutil"
 
 	gnaming "google.golang.org/grpc/naming"
 )

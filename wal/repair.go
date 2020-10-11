@@ -20,8 +20,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/coreos/etcd/pkg/fileutil"
-	"github.com/coreos/etcd/wal/walpb"
+	"github.com/mosheya/etcd/pkg/fileutil"
+	"github.com/mosheya/etcd/wal/walpb"
 )
 
 // Repair tries to repair ErrUnexpectedEOF in the

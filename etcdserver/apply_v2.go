@@ -19,11 +19,11 @@ import (
 	"path"
 	"time"
 
-	"github.com/coreos/etcd/etcdserver/api"
-	"github.com/coreos/etcd/etcdserver/membership"
-	"github.com/coreos/etcd/pkg/pbutil"
-	"github.com/coreos/etcd/store"
 	"github.com/coreos/go-semver/semver"
+	"github.com/mosheya/etcd/etcdserver/api"
+	"github.com/mosheya/etcd/etcdserver/membership"
+	"github.com/mosheya/etcd/pkg/pbutil"
+	"github.com/mosheya/etcd/store"
 )
 
 // ApplierV2 is the interface for processing V2 raft messages

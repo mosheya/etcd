@@ -20,10 +20,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coreos/etcd/etcdserver/api/etcdhttp"
-	"github.com/coreos/etcd/etcdserver/api/v2http/httptypes"
-	"github.com/coreos/etcd/etcdserver/auth"
-	"github.com/coreos/etcd/pkg/logutil"
+	"github.com/mosheya/etcd/etcdserver/api/etcdhttp"
+	"github.com/mosheya/etcd/etcdserver/api/v2http/httptypes"
+	"github.com/mosheya/etcd/etcdserver/auth"
+	"github.com/mosheya/etcd/pkg/logutil"
 
 	"github.com/coreos/pkg/capnslog"
 )
@@ -34,7 +34,7 @@ const (
 )
 
 var (
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "etcdserver/api/v2http")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "etcdserver/api/v2http")
 	mlog = logutil.NewMergeLogger(plog)
 )
 

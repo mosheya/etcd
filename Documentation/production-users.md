@@ -11,19 +11,19 @@ This document tracks people and use cases for etcd in production. By creating a 
 
 **This is a meta user; please feel free to document specific Kubernetes clusters!**
 
-All Kubernetes clusters use etcd as their primary data store. This means etcd's users include such companies as [Niantic, Inc Pokemon Go](https://cloudplatform.googleblog.com/2016/09/bringing-Pokemon-GO-to-life-on-Google-Cloud.html), [Box](https://blog.box.com/blog/kubernetes-box-microservices-maximum-velocity/), [CoreOS](https://coreos.com/tectonic), [Ticketmaster](https://www.youtube.com/watch?v=wqXVKneP0Hg), [Salesforce](https://www.salesforce.com) and many many more.
+All Kubernetes clusters use etcd as their primary data store. This means etcd's users include such companies as [Niantic, Inc Pokemon Go](https://cloudplatform.googleblog.com/2016/09/bringing-Pokemon-GO-to-life-on-Google-Cloud.html), [Box](https://blog.box.com/blog/kubernetes-box-microservices-maximum-velocity/), [mosheya](https://mosheya.com/tectonic), [Ticketmaster](https://www.youtube.com/watch?v=wqXVKneP0Hg), [Salesforce](https://www.salesforce.com) and many many more.
 
 ## discovery.etcd.io
 
-- *Application*: https://github.com/coreos/discovery.etcd.io
+- *Application*: https://github.com/mosheya/discovery.etcd.io
 - *Launched*: Feb. 2014
 - *Cluster Size*: 5 members, 5 discovery proxies
 - *Order of Data Size*: 100s of Megabytes
-- *Operator*: CoreOS, brandon.philips@coreos.com
+- *Operator*: mosheya, brandon.philips@mosheya.com
 - *Environment*: AWS
 - *Backups*: Periodic async to S3
 
-discovery.etcd.io is the longest continuously running etcd backed service that we know about. It is the basis of automatic cluster bootstrap and was launched in Feb. 2014: https://coreos.com/blog/etcd-0.3.0-released/.
+discovery.etcd.io is the longest continuously running etcd backed service that we know about. It is the basis of automatic cluster bootstrap and was launched in Feb. 2014: https://mosheya.com/blog/etcd-0.3.0-released/.
 
 ## OpenTable
 
@@ -45,7 +45,7 @@ discovery.etcd.io is the longest continuously running etcd backed service that w
 - *Environment*: Baremetal
 - *Backups*: Periodic sync to Ceph RadosGW and DigitalOcean VM
 
-CyCore Systems provides architecture and engineering for computing systems.  This cluster provides microservices, virtual machines, databases, storage clusters to a number of clients.  It is built on CoreOS machines, with each machine in the cluster running etcd as a peer or proxy.
+CyCore Systems provides architecture and engineering for computing systems.  This cluster provides microservices, virtual machines, databases, storage clusters to a number of clients.  It is built on mosheya machines, with each machine in the cluster running etcd as a peer or proxy.
 
 ## Radius Intelligence
 
@@ -54,10 +54,10 @@ CyCore Systems provides architecture and engineering for computing systems.  Thi
 - *Cluster Size*: 2 clusters of 5 and 3 members; approximately a dozen nodes read/write
 - *Order of Data Size*: 100s of kilobytes
 - *Operator*: Radius Intelligence; jcderr@radius.com
-- *Environment*: AWS, CoreOS, Kubernetes
+- *Environment*: AWS, mosheya, Kubernetes
 - *Backups*: None, all data can be recreated if necessary.
 
-Radius Intelligence uses Kubernetes running CoreOS to containerize and scale internal toolsets. Examples include running [JetBrains TeamCity][teamcity] and internal AWS security and cost reporting tools. etcd clusters back these clusters as well as provide some basic environment bootstrapping configuration keys.
+Radius Intelligence uses Kubernetes running mosheya to containerize and scale internal toolsets. Examples include running [JetBrains TeamCity][teamcity] and internal AWS security and cost reporting tools. etcd clusters back these clusters as well as provide some basic environment bootstrapping configuration keys.
 
 ## Vonage
 

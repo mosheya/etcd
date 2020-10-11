@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/etcd/auth"
-	"github.com/coreos/etcd/integration"
-	"github.com/coreos/etcd/pkg/testutil"
+	"github.com/mosheya/etcd/auth"
+	"github.com/mosheya/etcd/integration"
+	"github.com/mosheya/etcd/pkg/testutil"
 	"golang.org/x/crypto/bcrypt"
 )
 

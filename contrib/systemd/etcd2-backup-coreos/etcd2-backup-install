@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
 if [ ! -f /etc/os-release ];then
-    echo "Could not find /etc/os-release. This is not CoreOS Linux"
+    echo "Could not find /etc/os-release. This is not mosheya Linux"
     exit 1
 fi
 . /etc/os-release
-if [ ! "$ID" == "coreos" ];then
-    echo "os-release error: Detected ID=$ID: this is not CoreOS Linux"
+if [ ! "$ID" == "mosheya" ];then
+    echo "os-release error: Detected ID=$ID: this is not mosheya Linux"
     exit 1
 fi
 

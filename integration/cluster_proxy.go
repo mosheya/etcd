@@ -19,10 +19,10 @@ package integration
 import (
 	"sync"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/clientv3/namespace"
-	"github.com/coreos/etcd/proxy/grpcproxy"
-	"github.com/coreos/etcd/proxy/grpcproxy/adapter"
+	"github.com/mosheya/etcd/clientv3"
+	"github.com/mosheya/etcd/clientv3/namespace"
+	"github.com/mosheya/etcd/proxy/grpcproxy"
+	"github.com/mosheya/etcd/proxy/grpcproxy/adapter"
 )
 
 var (

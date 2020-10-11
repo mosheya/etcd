@@ -39,13 +39,13 @@ RUN rm -rf ${GOROOT} \
   && mkdir -p ${GOPATH}/src ${GOPATH}/bin \
   && go version
 
-RUN mkdir -p ${GOPATH}/src/github.com/coreos/etcd
-WORKDIR ${GOPATH}/src/github.com/coreos/etcd
+RUN mkdir -p ${GOPATH}/src/github.com/mosheya/etcd
+WORKDIR ${GOPATH}/src/github.com/mosheya/etcd
 
 ADD ./scripts/install-marker.sh /tmp/install-marker.sh
 
 RUN go get -v -u -tags spell github.com/chzchzchz/goword \
-  && go get -v -u github.com/coreos/license-bill-of-materials \
+  && go get -v -u github.com/mosheya/license-bill-of-materials \
   && go get -v -u honnef.co/go/tools/cmd/gosimple \
   && go get -v -u honnef.co/go/tools/cmd/unused \
   && go get -v -u honnef.co/go/tools/cmd/staticcheck \

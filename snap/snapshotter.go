@@ -27,13 +27,13 @@ import (
 	"strings"
 	"time"
 
-	pioutil "github.com/coreos/etcd/pkg/ioutil"
-	"github.com/coreos/etcd/pkg/pbutil"
-	"github.com/coreos/etcd/raft"
-	"github.com/coreos/etcd/raft/raftpb"
-	"github.com/coreos/etcd/snap/snappb"
-	"github.com/coreos/etcd/wal/walpb"
 	"github.com/coreos/pkg/capnslog"
+	pioutil "github.com/mosheya/etcd/pkg/ioutil"
+	"github.com/mosheya/etcd/pkg/pbutil"
+	"github.com/mosheya/etcd/raft"
+	"github.com/mosheya/etcd/raft/raftpb"
+	"github.com/mosheya/etcd/snap/snappb"
+	"github.com/mosheya/etcd/wal/walpb"
 )
 
 const (
@@ -41,7 +41,7 @@ const (
 )
 
 var (
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "snap")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "snap")
 
 	ErrNoSnapshot    = errors.New("snap: no available snapshot")
 	ErrEmptySnapshot = errors.New("snap: empty snapshot")

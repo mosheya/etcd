@@ -1,4 +1,4 @@
-package: github.com/coreos/etcd
+package: github.com/mosheya/etcd
 ignore:
 - google.golang.org/appengine
 import:
@@ -118,7 +118,7 @@ import:
   subpackages:
   - rate
 - package: google.golang.org/grpc
-  version: v1.23.0
+  version: v1.27.1
   subpackages:
   - balancer
   - codes

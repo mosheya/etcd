@@ -24,12 +24,12 @@ import (
 	"strings"
 	"time"
 
-	pioutil "github.com/coreos/etcd/pkg/ioutil"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/raft/raftpb"
-	"github.com/coreos/etcd/snap"
-	"github.com/coreos/etcd/version"
 	"github.com/dustin/go-humanize"
+	pioutil "github.com/mosheya/etcd/pkg/ioutil"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/raft/raftpb"
+	"github.com/mosheya/etcd/snap"
+	"github.com/mosheya/etcd/version"
 )
 
 const (

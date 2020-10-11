@@ -31,7 +31,7 @@ export GOPATH=${PWD}/gopath.proto
 export GOBIN=${PWD}/bin
 export PATH="${GOBIN}:${PATH}"
 
-ETCD_IO_ROOT="${GOPATH}/src/github.com/coreos/etcd"
+ETCD_IO_ROOT="${GOPATH}/src/github.com/mosheya/etcd"
 ETCD_ROOT="${ETCD_IO_ROOT}/etcd"
 GOGOPROTO_ROOT="${GOPATH}/src/github.com/gogo/protobuf"
 SCHWAG_ROOT="${GOPATH}/src/github.com/hexfusion/schwag"
@@ -79,12 +79,12 @@ popd
 
 for dir in ${DIRS}; do
 	pushd "${dir}"
-		protoc --gofast_out=plugins=grpc,import_prefix=github.com/coreos/:. -I=".:${GOGOPROTO_PATH}:${ETCD_IO_ROOT}:${GRPC_GATEWAY_ROOT}/third_party/googleapis" ./*.proto
-		sed -i.bak -E "s/github\.com\/coreos\/(gogoproto|github\.com|golang\.org|google\.golang\.org)/\1/g" ./*.pb.go
-		sed -i.bak -E 's/github\.com\/coreos\/(errors|fmt|io|context|math\/bits)/\1/g' ./*.pb.go
+		protoc --gofast_out=plugins=grpc,import_prefix=github.com/mosheya/:. -I=".:${GOGOPROTO_PATH}:${ETCD_IO_ROOT}:${GRPC_GATEWAY_ROOT}/third_party/googleapis" ./*.proto
+		sed -i.bak -E "s/github\.com\/mosheya\/(gogoproto|github\.com|golang\.org|google\.golang\.org)/\1/g" ./*.pb.go
+		sed -i.bak -E 's/github\.com\/mosheya\/(errors|fmt|io|context|math\/bits)/\1/g' ./*.pb.go
 		sed -i.bak -E 's/import _ \"gogoproto\"//g' ./*.pb.go
 		sed -i.bak -E 's/import fmt \"fmt\"//g' ./*.pb.go
-		sed -i.bak -E 's/import _ \"github\.com\/coreos\/google\/api\"//g' ./*.pb.go
+		sed -i.bak -E 's/import _ \"github\.com\/mosheya\/google\/api\"//g' ./*.pb.go
 		sed -i.bak -E 's/import _ \"google\.golang\.org\/genproto\/googleapis\/api\/annotations\"//g' ./*.pb.go
 		rm -f ./*.bak
 		goimports -w ./*.pb.go

@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/etcd/pkg/testutil"
-	"github.com/coreos/etcd/pkg/transport"
+	"github.com/mosheya/etcd/pkg/testutil"
+	"github.com/mosheya/etcd/pkg/transport"
 )
 
 func TestV2Set(t *testing.T) {

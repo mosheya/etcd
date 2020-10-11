@@ -32,24 +32,24 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/etcd/client"
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/embed"
-	"github.com/coreos/etcd/etcdserver"
-	"github.com/coreos/etcd/etcdserver/api/etcdhttp"
-	"github.com/coreos/etcd/etcdserver/api/v2http"
-	"github.com/coreos/etcd/etcdserver/api/v3client"
-	"github.com/coreos/etcd/etcdserver/api/v3election"
-	epb "github.com/coreos/etcd/etcdserver/api/v3election/v3electionpb"
-	"github.com/coreos/etcd/etcdserver/api/v3lock"
-	lockpb "github.com/coreos/etcd/etcdserver/api/v3lock/v3lockpb"
-	"github.com/coreos/etcd/etcdserver/api/v3rpc"
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
-	"github.com/coreos/etcd/pkg/testutil"
-	"github.com/coreos/etcd/pkg/tlsutil"
-	"github.com/coreos/etcd/pkg/transport"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/rafthttp"
+	"github.com/mosheya/etcd/client"
+	"github.com/mosheya/etcd/clientv3"
+	"github.com/mosheya/etcd/embed"
+	"github.com/mosheya/etcd/etcdserver"
+	"github.com/mosheya/etcd/etcdserver/api/etcdhttp"
+	"github.com/mosheya/etcd/etcdserver/api/v2http"
+	"github.com/mosheya/etcd/etcdserver/api/v3client"
+	"github.com/mosheya/etcd/etcdserver/api/v3election"
+	epb "github.com/mosheya/etcd/etcdserver/api/v3election/v3electionpb"
+	"github.com/mosheya/etcd/etcdserver/api/v3lock"
+	lockpb "github.com/mosheya/etcd/etcdserver/api/v3lock/v3lockpb"
+	"github.com/mosheya/etcd/etcdserver/api/v3rpc"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
+	"github.com/mosheya/etcd/pkg/testutil"
+	"github.com/mosheya/etcd/pkg/tlsutil"
+	"github.com/mosheya/etcd/pkg/transport"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/rafthttp"
 
 	"github.com/coreos/pkg/capnslog"
 	"github.com/soheilhy/cmux"
@@ -91,7 +91,7 @@ var (
 		ClientCertAuth: true,
 	}
 
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "integration")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "integration")
 )
 
 type ClusterConfig struct {

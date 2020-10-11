@@ -20,15 +20,15 @@ import (
 	"io"
 	"time"
 
-	"github.com/coreos/etcd/auth"
-	"github.com/coreos/etcd/etcdserver"
-	"github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes"
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
-	"github.com/coreos/etcd/mvcc"
-	"github.com/coreos/etcd/mvcc/backend"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/version"
 	"github.com/dustin/go-humanize"
+	"github.com/mosheya/etcd/auth"
+	"github.com/mosheya/etcd/etcdserver"
+	"github.com/mosheya/etcd/etcdserver/api/v3rpc/rpctypes"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
+	"github.com/mosheya/etcd/mvcc"
+	"github.com/mosheya/etcd/mvcc/backend"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/version"
 )
 
 type KVGetter interface {

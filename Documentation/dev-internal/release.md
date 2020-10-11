@@ -95,7 +95,7 @@ gpg2 --armor --default-key $SUBKEYID --output ${VERSION}.tar.gz.asc --detach-sig
 gpg2 --verify ${VERSION}.tar.gz.asc ${VERSION}.tar.gz
 ```
 
-The public key for GPG signing can be found at [CoreOS Application Signing Key](https://coreos.com/security/app-signing-key)
+The public key for GPG signing can be found at [mosheya Application Signing Key](https://mosheya.com/security/app-signing-key)
 
 
 ## Publish release page in GitHub
@@ -126,7 +126,7 @@ done
 
 ```
 for TARGET_ARCH in "amd64" "arm64" "ppc64le"; do
-  TAG=quay.io/coreos/etcd GOARCH=${TARGET_ARCH} \
+  TAG=quay.io/mosheya/etcd GOARCH=${TARGET_ARCH} \
     BINARYDIR=release/etcd-${VERSION}-linux-${TARGET_ARCH} \
     BUILDDIR=release \
     ./scripts/build-docker ${VERSION}
@@ -139,11 +139,11 @@ done
 docker login quay.io
 
 for TARGET_ARCH in "-arm64" "-ppc64le" ""; do
-  docker push quay.io/coreos/etcd:${VERSION}${TARGET_ARCH}
+  docker push quay.io/mosheya/etcd:${VERSION}${TARGET_ARCH}
 done
 ```
 
-- Add `latest` tag to the new image on [quay.io](https://quay.io/repository/coreos/etcd?tag=latest&tab=tags) if this is a stable release.
+- Add `latest` tag to the new image on [quay.io](https://quay.io/repository/mosheya/etcd?tag=latest&tab=tags) if this is a stable release.
 
 ## Announce to the etcd-dev Googlegroup
 

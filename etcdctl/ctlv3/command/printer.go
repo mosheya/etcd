@@ -19,10 +19,10 @@ import (
 	"fmt"
 	"strings"
 
-	v3 "github.com/coreos/etcd/clientv3"
 	"github.com/dustin/go-humanize"
+	v3 "github.com/mosheya/etcd/clientv3"
 
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
 )
 
 type printer interface {

@@ -17,7 +17,7 @@ package command
 import (
 	"fmt"
 
-	"github.com/coreos/etcd/version"
+	"github.com/mosheya/etcd/version"
 	"github.com/spf13/cobra"
 )
 

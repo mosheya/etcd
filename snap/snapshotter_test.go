@@ -23,9 +23,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/coreos/etcd/pkg/fileutil"
-	"github.com/coreos/etcd/raft/raftpb"
-	"github.com/coreos/etcd/wal/walpb"
+	"github.com/mosheya/etcd/pkg/fileutil"
+	"github.com/mosheya/etcd/raft/raftpb"
+	"github.com/mosheya/etcd/wal/walpb"
 )
 
 var testSnap = &raftpb.Snapshot{

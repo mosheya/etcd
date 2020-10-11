@@ -22,8 +22,8 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/pkg/tlsutil"
+	"github.com/mosheya/etcd/clientv3"
+	"github.com/mosheya/etcd/pkg/tlsutil"
 )
 
 type yamlConfig struct {

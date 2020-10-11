@@ -20,10 +20,10 @@ import (
 	"io"
 	"time"
 
-	"github.com/coreos/etcd/etcdserver/stats"
-	"github.com/coreos/etcd/pkg/pbutil"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/raft/raftpb"
+	"github.com/mosheya/etcd/etcdserver/stats"
+	"github.com/mosheya/etcd/pkg/pbutil"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/raft/raftpb"
 )
 
 const (

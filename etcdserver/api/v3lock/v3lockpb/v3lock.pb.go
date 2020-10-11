@@ -10,9 +10,9 @@ import (
 	math "math"
 	math_bits "math/bits"
 
-	etcdserverpb "github.com/coreos/etcd/etcdserver/etcdserverpb"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/golang/protobuf/proto"
+	etcdserverpb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"

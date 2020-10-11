@@ -20,11 +20,11 @@ import (
 	"strings"
 	"time"
 
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
-	"github.com/coreos/etcd/etcdserver/membership"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/rafthttp"
 	"github.com/golang/protobuf/proto"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
+	"github.com/mosheya/etcd/etcdserver/membership"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/rafthttp"
 )
 
 // isConnectedToQuorumSince checks whether the local member is connected to the

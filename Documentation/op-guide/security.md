@@ -242,7 +242,7 @@ When client authentication is enabled for an etcd member, the administrator must
 
 ## Notes for TLS authentication
 
-Since [v3.2.0](https://github.com/etcd-io/etcd/blob/master/CHANGELOG-3.2.md#v320-2017-06-09), [TLS certificates get reloaded on every client connection](https://github.com/etcd-io/etcd/pull/7829). This is useful when replacing expiry certs without stopping etcd servers; it can be done by overwriting old certs with new ones. Refreshing certs for every connection should not have too much overhead, but can be improved in the future, with caching layer. Example tests can be found [here](https://github.com/coreos/etcd/blob/b041ce5d514a4b4aaeefbffb008f0c7570a18986/integration/v3_grpc_test.go#L1601-L1757).
+Since [v3.2.0](https://github.com/etcd-io/etcd/blob/master/CHANGELOG-3.2.md#v320-2017-06-09), [TLS certificates get reloaded on every client connection](https://github.com/etcd-io/etcd/pull/7829). This is useful when replacing expiry certs without stopping etcd servers; it can be done by overwriting old certs with new ones. Refreshing certs for every connection should not have too much overhead, but can be improved in the future, with caching layer. Example tests can be found [here](https://github.com/mosheya/etcd/blob/b041ce5d514a4b4aaeefbffb008f0c7570a18986/integration/v3_grpc_test.go#L1601-L1757).
 
 Since [v3.2.0](https://github.com/etcd-io/etcd/blob/master/CHANGELOG-3.2.md#v320-2017-06-09), [server denies incoming peer certs with wrong IP `SAN`](https://github.com/etcd-io/etcd/pull/7687). For instance, if peer cert contains any IP addresses in Subject Alternative Name (SAN) field, server authenticates a peer only when the remote IP address matches one of those IP addresses. This is to prevent unauthorized endpoints from joining the cluster. For example, peer B's CSR (with `cfssl`) is:
 
@@ -436,7 +436,7 @@ When etcd create certain new directories it sets file permission to 700 to preve
 
 [cfssl]: https://github.com/cloudflare/cfssl
 [tls-setup]: ../../hack/tls-setup
-[tls-guide]: https://github.com/coreos/docs/blob/master/os/generate-self-signed-certificates.md
+[tls-guide]: https://github.com/mosheya/docs/blob/master/os/generate-self-signed-certificates.md
 [alt-name]: http://wiki.cacert.org/FAQ/subjectAltName
 [auth]: authentication.md
 [dm-crypt]: https://en.wikipedia.org/wiki/Dm-crypt

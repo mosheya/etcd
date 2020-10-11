@@ -31,8 +31,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coreos/etcd/pkg/fileutil"
-	"github.com/coreos/etcd/pkg/tlsutil"
+	"github.com/mosheya/etcd/pkg/fileutil"
+	"github.com/mosheya/etcd/pkg/tlsutil"
 )
 
 func NewListener(addr, scheme string, tlsinfo *TLSInfo) (l net.Listener, err error) {

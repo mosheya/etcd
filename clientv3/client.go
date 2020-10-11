@@ -25,14 +25,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/coreos/etcd/clientv3/balancer"
-	"github.com/coreos/etcd/clientv3/balancer/picker"
-	"github.com/coreos/etcd/clientv3/balancer/resolver/endpoint"
-	"github.com/coreos/etcd/clientv3/credentials"
-	"github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes"
-	"github.com/coreos/etcd/pkg/logutil"
 	"github.com/coreos/pkg/capnslog"
 	"github.com/google/uuid"
+	"github.com/mosheya/etcd/clientv3/balancer"
+	"github.com/mosheya/etcd/clientv3/balancer/picker"
+	"github.com/mosheya/etcd/clientv3/balancer/resolver/endpoint"
+	"github.com/mosheya/etcd/clientv3/credentials"
+	"github.com/mosheya/etcd/etcdserver/api/v3rpc/rpctypes"
+	"github.com/mosheya/etcd/pkg/logutil"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -49,7 +49,7 @@ var (
 )
 
 var (
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "clientv3")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "clientv3")
 )
 
 func init() {

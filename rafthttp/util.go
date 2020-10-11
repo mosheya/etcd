@@ -23,10 +23,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/coreos/etcd/pkg/transport"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/version"
 	"github.com/coreos/go-semver/semver"
+	"github.com/mosheya/etcd/pkg/transport"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/version"
 )
 
 var (

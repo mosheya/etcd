@@ -18,9 +18,9 @@ import (
 	"testing"
 	"time"
 
-	etcdErr "github.com/coreos/etcd/error"
-	"github.com/coreos/etcd/pkg/testutil"
 	"github.com/jonboulle/clockwork"
+	etcdErr "github.com/mosheya/etcd/error"
+	"github.com/mosheya/etcd/pkg/testutil"
 )
 
 // Ensure that any TTL <= minExpireTime becomes Permanent

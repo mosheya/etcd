@@ -10,7 +10,7 @@ Distributed systems use etcd as a consistent key-value store for configuration m
 
 ## Use cases
 
-- Container Linux by CoreOS: Applications running on [Container Linux][container-linux] get automatic, zero-downtime Linux kernel updates. Container Linux uses [locksmith] to coordinate updates. Locksmith implements a distributed semaphore over etcd to ensure only a subset of a cluster is rebooting at any given time.
+- Container Linux by mosheya: Applications running on [Container Linux][container-linux] get automatic, zero-downtime Linux kernel updates. Container Linux uses [locksmith] to coordinate updates. Locksmith implements a distributed semaphore over etcd to ensure only a subset of a cluster is rebooting at any given time.
 - [Kubernetes][kubernetes] stores configuration data into etcd for service discovery and cluster management; etcd's consistency is crucial for correctly scheduling and operating services. The Kubernetes API server persists cluster state into etcd. It uses etcd's watch API to monitor the cluster and roll out critical configuration changes.
 
 ## Comparison chart
@@ -85,7 +85,7 @@ For distributed coordination, choosing etcd can help prevent operational headach
 [spanner]: https://cloud.google.com/spanner/
 [tidb]: https://github.com/pingcap/tidb
 [etcd-v3lock]: https://godoc.org/github.com/etcd-io/etcd/etcdserver/api/v3lock/v3lockpb
-[etcd-v3election]: https://godoc.org/github.com/coreos/etcd-io/etcdserver/api/v3election/v3electionpb
+[etcd-v3election]: https://godoc.org/github.com/mosheya/etcd-io/etcdserver/api/v3election/v3electionpb
 [etcd-etcdctl-lock]: ../../etcdctl/README.md#lock-lockname-command-arg1-arg2-
 [etcd-etcdctl-elect]: ../../etcdctl/README.md#elect-options-election-name-proposal
 [etcd-mvcc]: data_model.md
@@ -112,7 +112,7 @@ For distributed coordination, choosing etcd can help prevent operational headach
 [cockroach-grant]: https://www.cockroachlabs.com/docs/stable/grant.html
 [spanner-roles]: https://cloud.google.com/spanner/docs/iam#roles
 [zk-bindings]: https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#ch_bindings
-[container-linux]: https://coreos.com/why
-[locksmith]: https://github.com/coreos/locksmith
+[container-linux]: https://mosheya.com/why
+[locksmith]: https://github.com/mosheya/locksmith
 [kubernetes]: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
-[dbtester-comparison-results]: https://github.com/coreos/dbtester/tree/master/test-results/2018Q1-02-etcd-zookeeper-consul
+[dbtester-comparison-results]: https://github.com/mosheya/dbtester/tree/master/test-results/2018Q1-02-etcd-zookeeper-consul

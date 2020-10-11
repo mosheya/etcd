@@ -29,33 +29,33 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/coreos/etcd/alarm"
-	"github.com/coreos/etcd/auth"
-	"github.com/coreos/etcd/compactor"
-	"github.com/coreos/etcd/discovery"
-	"github.com/coreos/etcd/etcdserver/api"
-	"github.com/coreos/etcd/etcdserver/api/v2http/httptypes"
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
-	"github.com/coreos/etcd/etcdserver/membership"
-	"github.com/coreos/etcd/etcdserver/stats"
-	"github.com/coreos/etcd/lease"
-	"github.com/coreos/etcd/lease/leasehttp"
-	"github.com/coreos/etcd/mvcc"
-	"github.com/coreos/etcd/mvcc/backend"
-	"github.com/coreos/etcd/pkg/fileutil"
-	"github.com/coreos/etcd/pkg/idutil"
-	"github.com/coreos/etcd/pkg/pbutil"
-	"github.com/coreos/etcd/pkg/runtime"
-	"github.com/coreos/etcd/pkg/schedule"
-	"github.com/coreos/etcd/pkg/types"
-	"github.com/coreos/etcd/pkg/wait"
-	"github.com/coreos/etcd/raft"
-	"github.com/coreos/etcd/raft/raftpb"
-	"github.com/coreos/etcd/rafthttp"
-	"github.com/coreos/etcd/snap"
-	"github.com/coreos/etcd/store"
-	"github.com/coreos/etcd/version"
-	"github.com/coreos/etcd/wal"
+	"github.com/mosheya/etcd/alarm"
+	"github.com/mosheya/etcd/auth"
+	"github.com/mosheya/etcd/compactor"
+	"github.com/mosheya/etcd/discovery"
+	"github.com/mosheya/etcd/etcdserver/api"
+	"github.com/mosheya/etcd/etcdserver/api/v2http/httptypes"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
+	"github.com/mosheya/etcd/etcdserver/membership"
+	"github.com/mosheya/etcd/etcdserver/stats"
+	"github.com/mosheya/etcd/lease"
+	"github.com/mosheya/etcd/lease/leasehttp"
+	"github.com/mosheya/etcd/mvcc"
+	"github.com/mosheya/etcd/mvcc/backend"
+	"github.com/mosheya/etcd/pkg/fileutil"
+	"github.com/mosheya/etcd/pkg/idutil"
+	"github.com/mosheya/etcd/pkg/pbutil"
+	"github.com/mosheya/etcd/pkg/runtime"
+	"github.com/mosheya/etcd/pkg/schedule"
+	"github.com/mosheya/etcd/pkg/types"
+	"github.com/mosheya/etcd/pkg/wait"
+	"github.com/mosheya/etcd/raft"
+	"github.com/mosheya/etcd/raft/raftpb"
+	"github.com/mosheya/etcd/rafthttp"
+	"github.com/mosheya/etcd/snap"
+	"github.com/mosheya/etcd/store"
+	"github.com/mosheya/etcd/version"
+	"github.com/mosheya/etcd/wal"
 
 	"github.com/coreos/go-semver/semver"
 	"github.com/coreos/pkg/capnslog"
@@ -91,7 +91,7 @@ const (
 )
 
 var (
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "etcdserver")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "etcdserver")
 
 	storeMemberAttributeRegexp = regexp.MustCompile(path.Join(membership.StoreMembersPrefix, "[[:xdigit:]]{1,16}", "attributes"))
 )
@@ -375,7 +375,7 @@ func NewServer(cfg ServerConfig) (srv *EtcdServer, err error) {
 		if cfg.ShouldDiscover() {
 			plog.Warningf("discovery token ignored since a cluster has already been initialized. Valid log found at %q", cfg.WALDir())
 		}
-		
+
 		// Find a snapshot to start/restart a raft node
 		walSnaps, serr := wal.ValidSnapshotEntries(cfg.WALDir())
 		if serr != nil {
@@ -1566,7 +1566,7 @@ func (s *EtcdServer) snapshot(snapi uint64, confState raftpb.ConfState) {
 		plog.Infof("saved snapshot at index %d", snap.Metadata.Index)
 
 		if err = s.r.storage.Release(snap); err != nil {
-				plog.Panicf("failed to release wal %v", err)
+			plog.Panicf("failed to release wal %v", err)
 		}
 
 		// When sending a snapshot, etcd will pause compaction.

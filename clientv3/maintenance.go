@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"io"
 
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
 
 	"google.golang.org/grpc"
 )

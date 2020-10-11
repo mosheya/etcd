@@ -22,8 +22,8 @@ import (
 	"net"
 	"sync"
 
-	"github.com/coreos/etcd/clientv3/balancer/resolver/endpoint"
-	"github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes"
+	"github.com/mosheya/etcd/clientv3/balancer/resolver/endpoint"
+	"github.com/mosheya/etcd/etcdserver/api/v3rpc/rpctypes"
 	grpccredentials "google.golang.org/grpc/credentials"
 )
 

@@ -17,8 +17,8 @@ package grpcproxy
 import (
 	"context"
 
-	"github.com/coreos/etcd/clientv3"
-	pb "github.com/coreos/etcd/etcdserver/etcdserverpb"
+	"github.com/mosheya/etcd/clientv3"
+	pb "github.com/mosheya/etcd/etcdserver/etcdserverpb"
 )
 
 type AuthProxy struct {

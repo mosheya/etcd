@@ -24,12 +24,12 @@ import (
 	"sort"
 	"time"
 
-	"github.com/coreos/etcd/pkg/types"
 	"github.com/coreos/pkg/capnslog"
+	"github.com/mosheya/etcd/pkg/types"
 )
 
 var (
-	plog = capnslog.NewPackageLogger("github.com/coreos/etcd", "pkg/netutil")
+	plog = capnslog.NewPackageLogger("github.com/mosheya/etcd", "pkg/netutil")
 
 	// indirection for testing
 	resolveTCPAddr = resolveTCPAddrDefault

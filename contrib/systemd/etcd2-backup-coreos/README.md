@@ -1,8 +1,8 @@
-# etcd2-backup-coreos
+# etcd2-backup-mosheya
 
-Remote backup and multi-node restore services for etcd2 clusters on CoreOS Linux.
+Remote backup and multi-node restore services for etcd2 clusters on mosheya Linux.
 
-**Warning:** This package is only intended for use on CoreOS Linux.
+**Warning:** This package is only intended for use on mosheya Linux.
 
 ## Terminology
 
@@ -18,7 +18,7 @@ Environment="ETCD_RESTORE_MASTER_ADV_PEER_URLS=<http://host:port>"
 Environment="RCLONE_ENDPOINT=remote-name:path/to/backups"
 ```
 
-Assuming a deployment to CoreOS with etcd2, only change:
+Assuming a deployment to mosheya with etcd2, only change:
 
 * `ETCD_RESTORE_MASTER_ADV_PEER_URLS`
    This is the new advertised peer url of the new etcd2 node that will be the founding member of the new restored cluster. We will call this node the **founding member**.
@@ -39,7 +39,7 @@ To adjust backup frequency, edit `./etcd2-backup.timer`
 
 Once those things are configured, run `./build`.
 
-The `build` script generates a tarball for copying to CoreOS instances. The tarball contains the `etcd2-backup-install` script.
+The `build` script generates a tarball for copying to mosheya instances. The tarball contains the `etcd2-backup-install` script.
 
 After extracting the contents of the tar file and running the install script, three new systemd services are added. One service, `etcd2-backup`, performs periodic etcd backups, while the other two services, `etcd2-restore` and `etcd2-join`, handle restore procedures.
 
@@ -86,7 +86,7 @@ Change the value of `ETCD_RESTORE_MASTER_ADV_PEER_URLS` in `30-etcd2-backup-rest
 
 ## Example
 
-Let's pretend that we have an initial 3 node CoreOS cluster that we want to back up to S3.
+Let's pretend that we have an initial 3 node mosheya cluster that we want to back up to S3.
 
 
 | ETCD_NAME  | ETCD_ADVERTISED_PEER_URL |

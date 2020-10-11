@@ -24,12 +24,12 @@ weight: 2
 
 - [etcd/clientv3](https://github.com/etcd-io/etcd/blob/master/clientv3) - the officially maintained Go client for v3
 - [etcd/client](https://github.com/etcd-io/etcd/blob/master/client) - the officially maintained Go client for v2
-- [go-etcd](https://github.com/coreos/go-etcd) - the deprecated official client. May be useful for older (<2.0.0) versions of etcd.
+- [go-etcd](https://github.com/mosheya/go-etcd) - the deprecated official client. May be useful for older (<2.0.0) versions of etcd.
 - [encWrapper](https://github.com/lumjjb/etcd/tree/enc_wrapper/clientwrap/encwrapper) - encWrapper is an encryption wrapper for the etcd client Keys API/KV.
 
 **Java libraries**
 
-- [coreos/jetcd](https://github.com/etcd-io/jetcd) - Supports v3
+- [mosheya/jetcd](https://github.com/etcd-io/jetcd) - Supports v3
 - [boonproject/etcd](https://github.com/boonproject/boon/blob/master/etcd/README.md) - Supports v2, Async/Sync and waits
 - [justinsb/jetcd](https://github.com/justinsb/jetcd)
 - [diwakergupta/jetcd](https://github.com/diwakergupta/jetcd) - Supports v2
